@@ -10,7 +10,7 @@ end
 require 'capybara/rails'
 
 Spec::Runner.configure do |config|
-  config.include Capybara 
+  config.include Capybara
 end
 <%- end -%>
 

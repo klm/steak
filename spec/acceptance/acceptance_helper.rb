@@ -12,7 +12,7 @@ module Factories
     end
     path
   end
-  
+
   def create_rails_app(options = {})
     path = Dir.tmpdir + "rails_app_#{String.random}"
     FileUtils.rm_rf path
@@ -22,20 +22,20 @@ module Factories
       file.write "\nconfig.gem 'rspec-rails', :lib => false\n"
     end
     FileUtils.cp_r File.dirname(__FILE__) + "/../../", path + "/vendor/plugins/steak"
-    
+
     Dir.chdir path do
       `script/generate rspec`
     end
-    
+
     unless options[:setup_steak] == false
       Dir.chdir path do
         `script/generate steak`
       end
     end
-    
+
     path
   end
-  
+
 end
 
 module HelperMethods

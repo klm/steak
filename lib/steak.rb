@@ -24,5 +24,5 @@ if defined?(Spec::Rails)
       end
     end
   end
-  
 end
+
