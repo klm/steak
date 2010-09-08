@@ -8,23 +8,23 @@ module Steak
     desc <<-DESC
 Description:
     Create an acceptance spec for the feature NAME in the
-    'spec/acceptance' folder.
+    'acceptance' folder.
 
 Example:
     `rails generate steak:spec checkout`
 
     Creates an acceptance spec for the "checkout" feature:
-        spec/acceptance/checkout_spec.rb
+        acceptance/checkout_spec.rb
 DESC
 
     def manifest
-      empty_directory File.join('spec/acceptance', class_path)
+      empty_directory File.join('acceptance', class_path)
       file_name.gsub!(/_spec$/, "")
 
       @feature_name  = file_name.titleize
       @relative_path = "../" * class_path.size
       
-      target = File.join('spec/acceptance', class_path, 
+      target = File.join('acceptance', class_path, 
                          "#{file_name}_spec.rb")
 
       template 'acceptance_spec.rb', target

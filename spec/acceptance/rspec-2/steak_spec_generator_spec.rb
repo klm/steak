@@ -16,7 +16,7 @@ feature "Acceptance spec generator for rails", %q{
     end
 
     File.exist?(
-      @rails_app + "/spec/acceptance/document_creation_spec.rb"
+      @rails_app + "/acceptance/document_creation_spec.rb"
     ).should be_true
   end
 
@@ -26,7 +26,7 @@ feature "Acceptance spec generator for rails", %q{
     end
 
     File.exist?(
-      @rails_app + "/spec/acceptance/creating_documents_spec.rb"
+      @rails_app + "/acceptance/creating_documents_spec.rb"
     ).should be_true
   end
 
@@ -36,7 +36,7 @@ feature "Acceptance spec generator for rails", %q{
     end
 
     File.exist?(
-      @rails_app + "/spec/acceptance/document_creation_spec.rb"
+      @rails_app + "/acceptance/document_creation_spec.rb"
     ).should be_true
   end
 
@@ -46,7 +46,7 @@ feature "Acceptance spec generator for rails", %q{
     end
 
     File.exist?(
-      @rails_app + "/spec/acceptance/document_creation_spec.rb"
+      @rails_app + "/acceptance/document_creation_spec.rb"
     ).should be_true
   end
 
@@ -55,7 +55,7 @@ feature "Acceptance spec generator for rails", %q{
       `rails generate steak:spec document/creation_spec`
     end
 
-    file_path = @rails_app + "/spec/acceptance/document/creation_spec.rb"
+    file_path = @rails_app + "/acceptance/document/creation_spec.rb"
 
     File.exist?(file_path).should be_true
     File.read(file_path).should include("/../acceptance_helper")

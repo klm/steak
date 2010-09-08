@@ -14,9 +14,9 @@ feature "Steak generator for rails", %q{
       `rails generate steak:install`
     end
 
-    File.exist?(rails_app + "/spec/acceptance/acceptance_helper.rb").should be_true
-    File.exist?(rails_app + "/spec/acceptance/support/helpers.rb").should be_true
-    File.exist?(rails_app + "/spec/acceptance/support/paths.rb").should be_true
+    File.exist?(rails_app + "/acceptance/acceptance_helper.rb").should be_true
+    File.exist?(rails_app + "/acceptance/support/helpers.rb").should be_true
+    File.exist?(rails_app + "/acceptance/support/paths.rb").should be_true
 
   end
 
@@ -27,7 +27,7 @@ feature "Steak generator for rails", %q{
       `rails generate steak:install`
     end
 
-    spec_file = create_spec :path    => rails_app + "/spec/acceptance",
+    spec_file = create_spec :path    => rails_app + "/acceptance",
                             :content => <<-SPEC
       require File.dirname(__FILE__) + "/acceptance_helper.rb"
       feature "Capybara spec" do
@@ -48,7 +48,7 @@ feature "Steak generator for rails", %q{
       `rails generate steak:install --webrat`
     end
 
-    spec_file = create_spec :path    => rails_app + "/spec/acceptance",
+    spec_file = create_spec :path    => rails_app + "/acceptance",
                             :content => <<-SPEC
       require File.dirname(__FILE__) + "/acceptance_helper.rb"
       feature "Webrat spec" do

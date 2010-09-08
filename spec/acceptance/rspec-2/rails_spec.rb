@@ -8,7 +8,7 @@ feature "Acceptance spec execution", %q{
 
   scenario "Minimal acceptance spec" do
     rails_app = create_rails_app
-    spec_file = create_spec :path    => rails_app + "/spec/acceptance",
+    spec_file = create_spec :path    => rails_app + "/acceptance",
                             :content => <<-SPEC
       require File.dirname(__FILE__) + "/acceptance_helper.rb"
       feature "Minimal spec" do
@@ -24,7 +24,7 @@ feature "Acceptance spec execution", %q{
 
   scenario "Integration stuff" do
     rails_app = create_rails_app
-    spec_file = create_spec :path    => rails_app + "/spec/acceptance",
+    spec_file = create_spec :path    => rails_app + "/acceptance",
                             :content => <<-SPEC
       require File.dirname(__FILE__) + "/acceptance_helper.rb"
       feature "Minimal spec" do
@@ -40,7 +40,7 @@ feature "Acceptance spec execution", %q{
   
   scenario "Path helpers are available" do
     rails_app = create_rails_app
-    spec_file = create_spec :path    => rails_app + "/spec/acceptance",
+    spec_file = create_spec :path    => rails_app + "/acceptance",
                             :content => <<-SPEC
       require File.dirname(__FILE__) + "/acceptance_helper.rb"
       feature "Minimal spec" do
@@ -65,7 +65,7 @@ feature "Acceptance spec execution", %q{
   scenario "Running specs with rake" do
     rails_app = create_rails_app
 
-    spec_file = create_spec :path    => rails_app + "/spec/acceptance",
+    spec_file = create_spec :path    => rails_app + "/acceptance",
                             :content => <<-SPEC
       require File.dirname(__FILE__) + "/acceptance_helper.rb"
       feature "Basic spec" do
@@ -79,9 +79,6 @@ feature "Acceptance spec execution", %q{
       `rake db:create db:migrate db:test:prepare`
 
       output = `rake spec:acceptance`
-      output.should =~ /1 example, 0 failures/
-
-      output = `rake`
       output.should =~ /1 example, 0 failures/
     end
   end

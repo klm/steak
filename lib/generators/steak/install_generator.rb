@@ -10,7 +10,7 @@ module Steak
     desc <<-DESC
 Description:
     Sets up Steak in your Rails project. This will generate the
-    spec/acceptance directory and the necessary files.
+    acceptance directory and the necessary files.
 
     If you haven't already, You should also run
     `rails generate rspec:install` to complete the set up.
@@ -26,10 +26,10 @@ DESC
 
     def manifest
       empty_directory 'spec/controllers'
-      empty_directory 'spec/acceptance/support'
-      template "acceptance_helper.rb", "spec/acceptance/acceptance_helper.rb"
-      copy_file "helpers.rb",           "spec/acceptance/support/helpers.rb"
-      copy_file "paths.rb",             "spec/acceptance/support/paths.rb"
+      empty_directory 'acceptance/support'
+      template "acceptance_helper.rb", "acceptance/acceptance_helper.rb"
+      copy_file "helpers.rb",           "acceptance/support/helpers.rb"
+      copy_file "paths.rb",             "acceptance/support/paths.rb"
     end
 
     def driver

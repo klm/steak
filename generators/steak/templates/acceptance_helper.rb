@@ -14,5 +14,5 @@ Spec::Runner.configure do |config|
 end
 <%- end -%>
 
-# Put your acceptance spec helpers inside /spec/acceptance/support
+# Put your acceptance spec helpers inside /acceptance/support
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}

@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/../spec_helper"
+require File.dirname(__FILE__) + "/../spec/spec_helper"
 require "steak"
 <%- if driver == 'webrat' %>
 require "webrat"
@@ -25,5 +25,5 @@ require 'capybara/rails'
 RSpec.configuration.include Capybara, :type => :acceptance
 <%- end -%>
 
-# Put your acceptance spec helpers inside /spec/acceptance/support
+# Put your acceptance spec helpers inside /acceptance/support
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
